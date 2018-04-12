@@ -85,6 +85,7 @@ export default {
             '[name]_[local]__[hash:base64:5]',
           ...options.modules,
           getJSON(filepath, json) {
+            options.modules.onGetJSONCalled && options.modules.onGetJSONCalled(filepath, json);
             modulesExported[filepath] = json
           }
         })
