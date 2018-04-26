@@ -14,6 +14,7 @@ export default {
       ...this.options,
       file: this.id,
       data: code,
+      includePaths: ["node_modules"],
       indentedSyntax: /\.sass$/.test(this.id),
       sourceMap: this.sourceMap,
       importer: [(url, importer, done) => {
