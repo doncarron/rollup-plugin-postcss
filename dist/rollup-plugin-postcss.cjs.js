@@ -224,6 +224,7 @@ var sassLoader = {
       return Promise.resolve(pify(sass.render.bind(sass))(Object.assign({}, this.options, {
         file: this.id,
         data: code,
+        includePaths: ["node_modules"],
         indentedSyntax: /\.sass$/.test(this.id),
         sourceMap: this.sourceMap,
         importer: [(url, importer, done) => {
